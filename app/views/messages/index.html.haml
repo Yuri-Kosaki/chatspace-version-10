@@ -1,0 +1,29 @@
+.contents
+  .left_content
+    .left_header--back-corn
+      = link_to edit_user_registration_path do
+        %i.fa.fa-cog.fa-lg
+      = link_to new_group_path do
+        %i.fa.fa-pencil-square-o.fa-lg
+      %h1
+        = current_user.nickname
+    .left_body-back-blue
+      - @messages.each do |message|
+        %h2 TECH::CAMP
+        %p
+          = message.body
+  .right_content
+    .right_header--white
+      = link_to edit_group_path(@group) do
+        %button Edit
+      %h1 TECH::CAMP
+      %p
+        = current_user.nickname
+    .right_body--back-gray
+      = render partial: "messages/messages", collection: @messages
+    .right_form--back-white
+      = form_for([@group, @message]) do |f|
+        = f.text_area :body, placeholder: "Type a message", size: "121px"
+        %i.fa.fa-picture-o.fa-lg{"aria-hidden" => "true"}
+        = button_tag "Send", type: "submit"
+  %footer

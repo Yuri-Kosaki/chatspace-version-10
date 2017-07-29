@@ -1,0 +1,11 @@
+.contents
+  .left_content
+    .left_header--back-corn
+      = link_to edit_user_registration_path do
+        %i.fa.fa-cog.fa-lg
+      = link_to new_group_path do
+        %i.fa.fa-pencil-square-o.fa-lg
+      %h1
+        = current_user.nickname
+    .left_body-back-blue
+      = render partial: "groups/groups", collection: @groups
