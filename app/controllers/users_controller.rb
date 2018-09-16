@@ -1,20 +1,26 @@
 class UsersController < ApplicationController
-
   def edit
-    @user = User.find(params[:id])
   end
 
   def update
-    if current_user.update(update_params)
-      redirect_to group_messages_path, notice: "ユーザー情報を更新しました。"
+    if current_user.update(user_params)
+      redirect_to root_path
     else
-      flash.now[:alert] = "ユーザー情報の更新に失敗しました。"
+      render :edit
+    end
+  end
+
+  def index
+    @users = User.where('name LIKE(?)', "%#{params[:name]}%").where.not(id: current_user.id)
+    respond_to do |format|
+      format.html
+      format.json
     end
   end
 
   private
-  def update_params
-    params.require(:user).permit(:nickname, :email, :password)
-  end
 
+  def user_params
+    params.require(:user).permit(:name, :email)
+  end
 end

@@ -1,0 +1,48 @@
+.nav {
+  float: left;
+  height: 100vh;
+  width: 300px;
+  background-color: $blue;
+  color: $white;
+  overflow: scroll;
+  &__name {
+    font-size: 16px;
+    font-weight: bold ;
+    padding: 35px 20px;
+    background-color: $dark-blue;
+    height: 30px;
+    &__lists{
+      float: right;
+      padding-left: 10px;
+      &__list{
+        float: right;
+        padding-left: 10px;
+        .icon{
+          color: white;
+        }
+      }
+    }
+  }
+  &__room {
+    color: $white;
+    :hover {
+      background-color: #384a62;
+    }
+    &__box {
+      padding-top: 20px;
+      padding-right: 20px;
+      padding-left: 20px;
+      padding-bottom: 20px;
+      color: white;
+    }
+    &__name {
+      font-size: 15px;
+      text-decoration: none;
+    }
+    &__comment {
+      padding-top: 5px;
+      font-size: 11px;
+      text-decoration: none;
+    }
+  }
+}
