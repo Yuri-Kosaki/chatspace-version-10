@@ -14,7 +14,8 @@
 ***
 
 ### groups table
-|Column	|Type|Options|
+|Column|Type|Options|
+|----|----|----|
 |name	|string|null: false|
 ###
  * Association
@@ -24,6 +25,7 @@
 ***
 ### members table
 |Column|Type|Options|
+|----|----|----|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 ###
@@ -36,6 +38,7 @@
 ***
 ### messages table
 |Column	|Type|Options|
+|----|----|----|
 |body|text|null: false|
 |image|string|	
 |user_id|integer|null: false, foreign_key: true|
