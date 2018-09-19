@@ -39,21 +39,25 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
 
-  gem 'haml-rails', '~>0.9'
-
-  gem 'font-awesome-rails'
-
-  gem 'erb2haml'
-
-  gem 'devise'
-
   gem 'pry-rails'
 
   gem 'rspec-rails'
 
-  gem 'carrierwave'
+  gem 'rails-controller-testing'
 
-  gem 'mini_magick'
+  gem "factory_girl_rails", "~> 4.0"
+
+  gem 'faker'
+
+  gem 'capistrano'
+
+  gem 'capistrano-rbenv'
+
+  gem 'capistrano-bundler'
+
+  gem 'capistrano-rails'
+
+  gem 'capistrano3-unicorn'
 end
 
 group :development do
@@ -75,3 +79,17 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'rake', '< 11.0'
 
 gem 'rails-i18n'
+
+gem 'haml-rails', '~>0.9'
+
+gem 'font-awesome-rails'
+
+gem 'erb2haml'
+
+gem 'devise'
+
+gem 'carrierwave'
+
+gem 'mini_magick'
+
+gem 'fog-aws'
